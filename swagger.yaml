@@ -11,6 +11,13 @@ paths:
       summary: Get all blogs
       tags:
         - Blogs
+      parameters:
+        - in: query
+          name: category
+          schema:
+            type: string
+          required: false
+          description: Filter blogs by category
       responses:
         '200':
           description: List of blogs
