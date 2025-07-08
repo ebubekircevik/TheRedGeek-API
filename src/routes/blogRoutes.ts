@@ -7,27 +7,10 @@ import {
   deleteBlog
 } from "../controllers/blogController";
 
-/**
- * @swagger
- * tags:
- *   name: Blogs
- *   description: Blog management
- */
-
-/**
- * @swagger
- * /api/blogs:
- *   get:
- *     summary: Get all blogs
- *     tags: [Blogs]
- *     responses:
- *       200:
- *         description: List of blogs
- */
-
 const router = Router();
 
 router.post("/", createBlog);
+// GET /api/blogs?category=categoryName
 router.get("/", getBlogs);
 router.get("/:id", (req: Request, res: Response, next: NextFunction) => {
   Promise.resolve(getBlogById(req, res)).catch(next);

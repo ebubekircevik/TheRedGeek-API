@@ -12,10 +12,15 @@ export const createBlog = async (req: Request, res: Response) => {
   }
 };
 
-// Tüm kullanıcıları getir
+// Tüm blogları getir veya kategoriye göre filtrele
 export const getBlogs = async (req: Request, res: Response) => {
   try {
-    const blogs = await Blog.find();
+    const { category } = req.query;
+    let filter = {};
+    if (category) {
+      filter = { category };
+    }
+    const blogs = await Blog.find(filter);
     res.json(blogs);
   } catch (error) {
     res.status(500).json({ error: (error as Error).message });
