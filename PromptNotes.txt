@@ -1,0 +1,2 @@
+Mongo db atlas da TheRedGeek projem var. bu proje altında TheRedGeekCluster. bu cluster altında theredgeek db, bu db altında da blogs ve users collection ları var. bu collection lara CRUD işlemleri yapabileceğim bir rest api projesi yapmak istiyorum node js ile. Sıfırdan bir proje olacak beni adım adım yönlendir
+profeyonel bir proje olsun 
