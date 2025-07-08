@@ -3,6 +3,10 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import blogRoutes from './routes/blogRoutes';
 import userRoutes from './routes/userRoutes';
+import swaggerUi from "swagger-ui-express";
+import YAML from "yamljs";
+
+const swaggerDocument = YAML.load("./swagger.yaml");
 
 dotenv.config();
 
@@ -10,6 +14,8 @@ const app = express();
 app.use(express.json());
 app.use('/api/blogs', blogRoutes);
 app.use('/api/users', userRoutes);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 // MongoDB bağlantısı
 mongoose
   .connect(process.env.MONGODB_URI as string)

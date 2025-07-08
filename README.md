@@ -26,7 +26,7 @@ npm install
 Create a `.env` file in the project root:
 ```
 MONGODB_URI=your_mongodb_atlas_connection_string
-PORT=5001
+PORT=5000
 ```
 
 ### Development

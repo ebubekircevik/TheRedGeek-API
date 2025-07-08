@@ -7,6 +7,24 @@ import {
   deleteBlog
 } from "../controllers/blogController";
 
+/**
+ * @swagger
+ * tags:
+ *   name: Blogs
+ *   description: Blog management
+ */
+
+/**
+ * @swagger
+ * /api/blogs:
+ *   get:
+ *     summary: Get all blogs
+ *     tags: [Blogs]
+ *     responses:
+ *       200:
+ *         description: List of blogs
+ */
+
 const router = Router();
 
 router.post("/", createBlog);
